@@ -27,11 +27,11 @@
         </div> -->
         <div class="container">
             <h4 class="display-4 scammed" style="font-style: italic;" if={!$this.playerIsLeader && JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] !=  "0x0000000000000000000000000000000000000000000000000000000000000000"}>
-            {JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8])}正在</h4>
+            {JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8])}正试图</h4>
             <h4 class="display-4 scammed" style="font-style: italic;" if={!$this.playerIsLeader && JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] ==  "0x0000000000000000000000000000000000000000000000000000000000000000"}>
-            某人正在</h4>
-            <h1 class="display-1 scammed" if={!$this.playerIsLeader && !$this.gracePeriod}>打包细软</h1>
-            <h1 class="display-1 scammed" if={$this.playerIsLeader && !$this.gracePeriod}>你要走上人生巅峰了！</h1>
+            有人正试图</h4>
+            <h1 class="display-1 scammed" if={!$this.playerIsLeader && !$this.gracePeriod}>卷款而逃</h1>
+            <h1 class="display-1 scammed" if={$this.playerIsLeader && !$this.gracePeriod}>你就要走上人生巅峰了！</h1>
             <h1 class="display-1 scammed" if={!$this.playerIsLeader && $this.gracePeriod}>ICO阶段</h1>
             <h1 class="display-1 scammed" if={$this.playerIsLeader && $this.gracePeriod}>你正在投资ICO</h1>
             <h2 class="display-3" if={$this.gracePeriod}><span class="ethglitch titleglow">{BN(JUST.Cache.currentRound[0]).plus(JUST.Cache.currentRound[5]).div(1e18).toFixed(4)} <i class="fab fa-ethereum ethglow"></i></span></h2>
