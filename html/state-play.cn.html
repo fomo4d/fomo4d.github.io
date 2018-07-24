@@ -38,8 +38,6 @@
             <h2 class="display-3" if={!$this.gracePeriod}><span class="ethglitch titleglow">{BN(JUST.Cache.currentRound[5]).div(1e18).toFixed(4)} <i class="fab fa-ethereum ethglow"></i></span> <span class="headtimer">--</span></h2>
              <h3 if={$this.gracePeriod} class="display-5" style="margin-top:50px;">ICO将于<span class="headtimer" style="display:inline;font-size:inherit;">内结束</span></h3>
 
-            <!-- <h5 class="display-5" if={!$this.playerIsLeader && !$this.gracePeriod}><a class="titlepopoutrightmini">You're</a> going to stop them, right?</h5> -->
-            <!-- <h5 class="display-5" if={!$this.playerIsLeader && !$this.gracePeriod}>{memes.buyButtonMessagePlayer[Math.floor(memes.buyButtonMessagePlayer.length * Math.random()) - 1].replace(/\$player/g, JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8]))}</h5>-->
             <h5 class="display-5" if={$this.playerIsLeader  && !$this.gracePeriod}>如果没有人再购买钥匙，你得到所有的ETH！</h5>
               <!--<a if={$this.gracePeriod} href="javascript:void(0)" class="buyOneTicket btn btn-lg btn-block btn-purp pulse marginb">Participate in the ICO</a> -->
               <h4 if={$this.gracePeriod} class="lead">ICO阶段: 休息1小时。投入的ETH将被返还； 等待本轮开始，购买<a class="titlepopoutrightmini">最早</a>并且<a class="titlepopoutrightmini">最便宜</a>的钥匙</b> </h4>
@@ -124,7 +122,7 @@
     <div class="container" style="margin-top:-1rem;">
         <div class="row cta-ticket" style="margin-top:-5rem;">
             <div class="col">
-                <div class="alert alert-purp pulse text-center text-light" role="alert">购买一个钥匙来开始ICO</div>
+                <div class="alert alert-purp pulse text-center text-light" role="alert">购买一把钥匙来开始ICO</div>
             </div>
         </div>
         <div class="row" if={$this.gracePeriod}>

@@ -38,8 +38,6 @@
             <h2 class="display-3" if={!$this.gracePeriod}><span class="ethglitch titleglow">{BN(JUST.Cache.currentRound[5]).div(1e18).toFixed(4)} <i class="fab fa-ethereum ethglow"></i></span> <span class="headtimer">--</span></h2>
              <h3 if={$this.gracePeriod} class="display-5" style="margin-top:50px;">ICO ends in <span class="headtimer" style="display:inline;font-size:inherit;">--</span></h3>
 
-            <!-- <h5 class="display-5" if={!$this.playerIsLeader && !$this.gracePeriod}><a class="titlepopoutrightmini">You're</a> going to stop them, right?</h5> -->
-            <!-- <h5 class="display-5" if={!$this.playerIsLeader && !$this.gracePeriod}>{memes.buyButtonMessagePlayer[Math.floor(memes.buyButtonMessagePlayer.length * Math.random()) - 1].replace(/\$player/g, JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8]))}</h5>-->
             <h5 class="display-5" if={$this.playerIsLeader  && !$this.gracePeriod}>If no one buys a key, you drain the contract!</h5>
               <!--<a if={$this.gracePeriod} href="javascript:void(0)" class="buyOneTicket btn btn-lg btn-block btn-purp pulse marginb">Participate in the ICO</a> -->
               <h4 if={$this.gracePeriod} class="lead">ICO Phase: A short 1 Hour interlude. Sent eth will be rejected; wait for the round to start for the  <a class="titlepopoutrightmini">first</a> and <a class="titlepopoutrightmini">cheapest</a> keys</b> </h4>

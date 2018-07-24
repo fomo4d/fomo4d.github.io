@@ -133,21 +133,21 @@
 <!-- <script src="js/bootstrap.min.js"></script> -->
 <script src="js/fontawesome-all.min.js"></script>
 <script>
-    var language = localStorage.getItem("language")
-	var language_suffix = ""
-	if (language === undefined || language.length === 0) {
-        language = "en"
-	}
-	if (language === "cn") {
-        language_suffix = ".cn"
-	}
-
     if(!localStorage.getItem("seenNote")){
         // Start phishing warning on load
         jQuery("#starting_note").modal()
 
         localStorage.setItem("seenNote", true)
     }
+
+    var language = localStorage.getItem("language")
+	var language_suffix = ""
+	if (language === undefined || language.length === 0) {
+        language = "cn"
+	}
+	if (language === "cn") {
+        language_suffix = ".cn"
+	}
 </script>
 <script src="js/bundle.js"></script>
 </body>
