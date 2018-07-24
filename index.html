@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- metatags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#343a40">
+
+	<!-- SEO related -->
+	<meta name="description" content="Welcome to blockchain development. Your ICO is over, hype is drying up. Take the private keys, drain everything.">
+	<meta name="keywords" content="Ethereum, F3D, Fomo3D, Proof of Weak Hands, P3D, PoWH3D, Cryptocurrency, ICO, Parody, Satire, Gambling, Jackpot, Lottery, Referral, Passive Income, UBI">
+	<meta name="author" content="Team JUST">
+
+	<!-- open graph -->
+	<meta property="og:title" content="Fomo4D: Your Personal Exit Scam">
+	<meta property="og:description" content="Welcome to blockchain development. Your ICO is over, hype is drying up. Take the private keys, drain everything.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://fomo4d.io/">
+	<meta property="og:image" content="https://exitscam.me/img/og_logo.png">
+	<meta property="og:image:width" content="400">
+	<meta property="og:iamge:height" content="400">
+
+	<!-- icons -->
+	<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-114.png">
+	<link rel="apple-touch-icon" sized="72x72" href="../img/apple-72.png">
+	<link rel="apple-touch-icon" href="../img/apple.png">
+	<link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+
+	<!-- css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/alertify.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/ghostframe.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,400" rel="stylesheet">
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<title>Fomo4D</title>
+</head>
+<body>
+<module-bash>
+</module-bash>
+<!-- <div class="blurryboy"></div> -->
+<div id="main-wrapper">
+	<!-- navigation -->
+	<header class="topbar fixed-top">
+		<module-navbar>
+		</module-navbar>
+	</header>
+	<!-- /navigation -->
+	<!-- noscript message -->
+	<noscript>
+		<div class="row">
+			<div class="col">
+				<div class="alert alert-purp pulse text-center text-light" role="alert" style="margin-top:8rem;">Please enable Javascript to play Fomo3D</div>
+			</div>
+		</div>
+	</noscript>
+	<!-- /noscript -->
+	<!-- modal loading -->
+	<!-- toggle with jQuery('#loading').modal({backdrop: 'static', keyboard: false})
+    this makes it impossible to close modal by clicking outside the box -->
+	<module-metamask></module-metamask>
+	<!-- /modal loading -->
+	<!-- modal vanity -->
+	<module-vanity>
+	</module-vanity>
+
+	<div class="modal fade" id="vanity_cn" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content bg-dark text-light">
+				<div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+					<!-- Name chooser -->
+					<div class="row">
+						<div class="col">
+							<p class="lead nomarginb">将你的名字永久保留在链上</p>
+						</div>
+						<div class="col-auto">
+							<p class="text-right nomarginb">
+								<a href="#" class="closemodal">
+									<i class="fas fa-times"></i>
+								</a>
+							</p>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col">
+							<div class="row">
+								<div class="col">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<button class="btn btn-outline-yel" type="button" id="randomName">
+												随机
+											</button>
+										</div>
+										<input class="form-control text-center" type="text" placeholder="输入名字" id="nameInput">
+									</div>
+								</div>
+							</div>
+							<p class="small">
+								<br>
+								名字必须符合以下条件:<br>
+								-必须独一无二<br>
+								-32字符以内<br>
+								-小写英文字母及数字<br>
+								-不得为纯数字<br>
+								-无特殊字母<br>
+								-字符间不超过一个空格<br>
+								<br>
+								如果请求失败，表明名字不符合以上至少一项 <br>
+								<br>
+								名字永远属于你，但游戏与排行榜仅显示最近使用的名字。你可以拥有任意数量的名字。<br><br>
+
+								起个好名字
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<button class="btn btn-purp btn-block btn-lg" id="namePurchase"><i class="fab fa-ethereum"></i> 花费 0.01 ETH 命名</button>
+							<p style="font-size:0.7rem;color:#afafaf"> 费用将分配给社区成员.</p>
+						</div>
+					</div>
+					<!-- /Name chooser -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" role="dialog" id="starting_note">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content bg-dark text-light">
+			<div class="modal-header">
+				<h5 class="modal-title">Stay Safe! - 注意安全!</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>FoMo 4D notes.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-block btn-lg btn-secondary btn-purp" data-dismiss="modal">Got it!</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="spacer" class="spacer"></div>
+<!-- main content (exchangeable) -->
+<module-template>
+</module-template>
+<module-airdrop>
+</module-airdrop>
+<module-modal>
+</module-modal>
+<!-- /main content -->
+</div>
+
+<script src="js/clipboard.min.js"></script>
+<script src="js/alertify.js"></script>
+<script src="js/bootstrap.bundle.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<script src="js/fontawesome-all.min.js"></script>
+<script>
+    var language = localStorage.getItem("language")
+	var language_suffix = ""
+	if (language === undefined || language.length === 0) {
+        language = "en"
+	}
+	if (language === "cn") {
+        language_suffix = ".cn"
+	}
+
+    if(!localStorage.getItem("seenNote")){
+        // Start phishing warning on load
+        jQuery("#starting_note").modal()
+
+        localStorage.setItem("seenNote", true)
+    }
+</script>
+<script src="js/bundle.js"></script>
+</body>
+</html>

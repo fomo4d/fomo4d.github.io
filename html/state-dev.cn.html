@@ -1,0 +1,270 @@
+<state-dev-page>
+    <h1>dev</h1>
+    <script>
+        this.on('mount', function(){
+            console.log('time to develop')
+        })
+    </script>
+</state-dev-page>
+
+<state-loading>
+    <center><h1 style="color: white;">正在加载...</h1></center>
+</state-loading>
+
+<state-error-notfound>
+    <center>
+        <h1>Page not found</h1>
+    </center>
+</state-error-notfound>
+
+<state-home>
+    <h1>Home</h1>
+</state-home>
+
+<module-navbar>
+    <div></div>
+</module-navbar>
+
+<state-navbar>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark jumboshade">
+        <div class="container">
+            <!-- NOTE: will be replaced by a smexy Logo once Justo makes one -->
+            <a class="navbar-brand" style="font-size:1.5rem" href="/shakedown">
+                FOMO 4D
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- NOTE: Adjust "active" state accordingly -->
+            <div class="collapse navbar-collapse flex-column" id="navbarNav">
+                <ul class="nav nav-tabs tabs-border-adjust w-100 text-light no-mobile">
+                    <div style="min-width: 7rem" class="col-auto">
+                        <i class="fas fa-stopwatch"></i> <span class="boxtimer lead small">00:00</span>
+                    </div>
+                    <div class="col-auto yourkeys">
+                        <i class="fas fa-key"></i> <!-- <span class="lead small" if={$this.gracePeriod}>&asymp;</span> --> <span class="lead small keycount">0000</span>
+                    </div>
+                    <div class="col-auto airdrop">
+                        <i class="fas fa-parachute-box"></i> <span class="airdropcounter lead small">{JUST.Cache.airdropTracker}% ({JUST.Cache.airdropPot} ETH)</span>
+                    </div>
+                    <div class="col-auto mr-auto afflink">
+                        <i class="fas fa-link"></i> <span class="lead small"><a href="javascript:void(0)" class="buyceo glow">注册昵称</a></span>
+                    </div>
+                    <div class="col-auto">
+                        <span class="small">帮助</span>
+                        <label class="switch">
+                            <input id="tutorialswitch" onclick="tutorials()" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="col-auto dropdown nav-item">
+                        <a class="dropdown-toggle nav-link nav-link-purp small" style="padding: 2px" data-toggle="dropdown" href="#">其他
+                            <span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://fomo3d.hostedwiki.co/">维基：新手上路</a>
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://etherscan.io/address/0xa62142888aba8370742be823c1782d17a0389da1#code">智能合约<br></a>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="small" style="cursor:pointer" onclick="switchLanguage('en')">English</span>
+                    </div>
+                    <!--
+                    <div class="col-auto">
+                      <span class="small">Fancy Mode</span>
+                      <label class="switch">
+                        <input id="fancyswitch" onclick="graphicslow()" type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                      -->
+                </ul>
+                <div class="d-flex only-mobile">
+                    <div class="p-2">
+                        <span class="small">帮助</span>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <label class="switch">
+                            <input id="tutorialswitch" onclick="tutorials()" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex only-mobile">
+                    <div class="p-2 afflink">
+                        <i class="fas fa-link"></i> <span class="lead small ceoshort"><a href="javascript:void(0)" class="buyceo glow">注册昵称</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex only-mobile">
+                <div class="p-2 ticktock">
+                    <i class="fas fa-stopwatch"></i> <span class="boxtimer lead small">00:00</span>
+                </div>
+                <div class="p-2 yourkeys">
+                    <i class="fas fa-key"></i> <!-- <span class="lead small" if={$this.gracePeriod}>&asymp;</span> --> <span class="lead small keycount">0000</span>
+                </div>
+                <div class="p-2 airdrop">
+                    <i class="fas fa-parachute-box"></i> <span class="airdropcounter lead small">{JUST.Cache.airdropTracker}% ({JUST.Cache.airdropPot} ETH)</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</state-navbar>
+
+<state-modal>
+    <div if={this.playerWon}>
+        <!-- modal popup -->
+        <div class="modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="gameoverTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameoverTitle">大吉大利!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>恭喜你获得了本轮的胜利，得到 <span class="ethAmount">ETH</span>.</p>
+                                <p>买一把钥匙开始新局，或提走你的奖励。</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-block btn-outline-purp" id="withdrawEarnings">提取奖励</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-block btn-purp">购买新钥匙</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /modal popup -->
+    </div>
+    <div if={this.playerLost}>
+        <!-- modal popup -->
+        <div class="modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="gameoverTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameoverTitle">
+                            <img src="/img/f3d-white.png" alt="" class="modal-logo">
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>你输了!</p>
+                                <p>有人卷走了 <span class="ethAmount">NaN</span> ETH。</p>
+                                <p>不用沮丧，你也得到了你的份额。</p>
+                                <p><span class="ethLoss">NaN</span> ETH 被转入了你的账户.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-block btn-outline-purp">提取个人账户</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-block btn-purp">买入下一轮</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /modal popup -->
+    </div>
+</state-modal>
+
+<state-vanity>
+    <!-- /modal loading -->
+    <!-- modal vanity -->
+    <div class="modal fade" id="vanity" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+                    <!-- Name chooser -->
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead nomarginb">将你的名字永久保留在链上</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right nomarginb">
+                                <a href="#" class="closemodal">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-yel" type="button" id="randomName">
+                                                随机
+                                            </button>
+                                        </div>
+                                        <input class="form-control text-center" type="text" placeholder="输入名字" id="nameInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="small">
+                                <br>
+                                名字必须符合以下条件:<br>
+                                -必须独一无二<br>
+                                -32字符以内<br>
+                                -小写英文字母及数字<br>
+                                -不得为纯数字<br>
+                                -无特殊字母<br>
+                                -字符间不超过一个空格<br>
+                                <br>
+                                如果请求失败，表明名字不符合以上至少一项 <br>
+                                <br>
+                                名字永远属于你，但游戏与排行榜仅显示最近使用的名字。你可以拥有任意数量的名字。<br><br>
+
+                                起个好名字
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-purp btn-block btn-lg" id="namePurchase"><i class="fab fa-ethereum"></i> 花费 0.01 ETH 命名</button>
+                            <p style="font-size:0.7rem;color:#afafaf"> 费用将分配给社区成员.</p>
+                        </div>
+                    </div>
+                    <!-- /Name chooser -->
+                </div>
+            </div>
+        </div>
+    </div>
+</state-vanity>
+
+<state-metamask>
+    <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 99999999;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            请查看Metamask继续操作...
+                        </div>
+                        <div class="col-2">
+                            <div class="miniloader"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</state-metamask>

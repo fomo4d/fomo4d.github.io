@@ -1,0 +1,282 @@
+<state-dev-page>
+    <h1>dev</h1>
+    <script>
+        this.on('mount', function(){
+            console.log('time to develop')
+        })
+    </script>
+</state-dev-page>
+
+<state-loading>
+    <center><h1 style="color: white;">Loading...</h1></center>
+</state-loading>
+
+<state-error-notfound>
+    <center>
+        <h1>Page not found</h1>
+    </center>
+</state-error-notfound>
+
+<state-home>
+    <h1>Home</h1>
+</state-home>
+
+<module-navbar>
+    <div></div>
+</module-navbar>
+
+<state-navbar>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark jumboshade">
+        <div class="container">
+            <!-- NOTE: will be replaced by a smexy Logo once Justo makes one -->
+            <a class="navbar-brand" style="font-size:1.5rem" href="/shakedown">
+                FOMO 4D
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- NOTE: Adjust "active" state accordingly -->
+            <div class="collapse navbar-collapse flex-column" id="navbarNav">
+                <ul class="nav nav-tabs tabs-border-adjust w-100 text-light no-mobile">
+                    <div style="min-width: 7rem" class="col-auto">
+                        <i class="fas fa-stopwatch"></i> <span class="boxtimer lead small">00:00</span>
+                    </div>
+                    <div class="col-auto yourkeys">
+                        <i class="fas fa-key"></i> <!-- <span class="lead small" if={$this.gracePeriod}>&asymp;</span> --> <span class="lead small keycount">0000</span>
+                    </div>
+                    <div class="col-auto airdrop">
+                        <i class="fas fa-parachute-box"></i> <span class="airdropcounter lead small">{JUST.Cache.airdropTracker}% ({JUST.Cache.airdropPot} ETH)</span>
+                    </div>
+                    <div class="col-auto mr-auto afflink">
+                        <i class="fas fa-link"></i> <span class="lead small"><a href="javascript:void(0)" class="buyceo glow">Register a name</a></span>
+                    </div>
+                    <div class="col-auto">
+                        <span class="small">Tutorials</span>
+                        <label class="switch">
+                            <input id="tutorialswitch" onclick="tutorials()" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="col-auto dropdown nav-item">
+                        <a class="dropdown-toggle nav-link nav-link-purp small" style="padding: 2px" data-toggle="dropdown" href="#">Misc
+                            <span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://fomo3d.hostedwiki.co/">Wiki: Quick Start Guide</a>
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://etherscan.io/address/0xa62142888aba8370742be823c1782d17a0389da1#code">Contract (F3D Long)<br></a>
+                            <a class="dropdown-item dropdown-item" href="https://p3d-bot.github.io/advice-kit.html">Advice-Kit</a>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <span class="small" style="cursor:pointer" onclick="switchLanguage('cn')">中文</span>
+                    </div>
+                    <!--
+                    <div class="col-auto">
+                      <span class="small">Fancy Mode</span>
+                      <label class="switch">
+                        <input id="fancyswitch" onclick="graphicslow()" type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </div>
+                      -->
+                </ul>
+                <div class="d-flex only-mobile">
+                    <div class="p-2">
+                        <span class="small">Tutorials</span>
+                    </div>
+                    <div class="ml-auto p-2">
+                        <label class="switch">
+                            <input id="tutorialswitch" onclick="tutorials()" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex only-mobile">
+                    <div class="p-2 afflink">
+                        <i class="fas fa-link"></i> <span class="lead small ceoshort"><a href="javascript:void(0)" class="buyceo glow">Register a name</a></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="d-flex only-mobile">
+                <div class="p-2 ticktock">
+                    <i class="fas fa-stopwatch"></i> <span class="boxtimer lead small">00:00</span>
+                </div>
+                <div class="p-2 yourkeys">
+                    <i class="fas fa-key"></i> <!-- <span class="lead small" if={$this.gracePeriod}>&asymp;</span> --> <span class="lead small keycount">0000</span>
+                </div>
+                <div class="p-2 airdrop">
+                    <i class="fas fa-parachute-box"></i> <span class="airdropcounter lead small">{JUST.Cache.airdropTracker}% ({JUST.Cache.airdropPot} ETH)</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</state-navbar>
+
+<state-how-to>
+    <div class="container" style="margin-top:5.5rem;">
+        You don't.
+    </div>
+</state-how-to>
+
+<state-about>
+    <div class="container" style="margin-top:5.5rem;">
+        Made by Team Just, the just you can trust.
+    </div>
+</state-about>
+
+<state-modal>
+    <div if={this.playerWon}>
+        <!-- modal popup -->
+        <div class="modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="gameoverTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameoverTitle">A Winrar is you!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>Congratulations! You exit scammed with <span class="ethAmount">ETH</span>.</p>
+                                <p>Buy a ticket to start a new round or withdraw your winnings.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-block btn-outline-purp" id="withdrawEarnings">Withdraw Winnings</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-block btn-purp">Buy New Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /modal popup -->
+    </div>
+    <div if={this.playerLost}>
+        <!-- modal popup -->
+        <div class="modal fade" id="winner" tabindex="-1" role="dialog" aria-labelledby="gameoverTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="gameoverTitle">
+                            <img src="/img/f3d-white.png" alt="" class="modal-logo">
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <p>You lose!</p>
+                                <p>Someone managed to exit scam with <span class="ethAmount">NaN</span> in total ETH.</p>
+                                <p>But don't worry, you got your fair share too.</p>
+                                <p><span class="ethLoss">NaN</span> ETH have been accredited to your vault.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-block btn-outline-purp">Withdraw Personal Exit Scam</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-block btn-purp">Fomo Into Next Round</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /modal popup -->
+    </div>
+</state-modal>
+
+<state-vanity>
+    <div class="modal fade" id="vanity" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+                    <!-- Name chooser -->
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead nomarginb">Graffiti your name on the Blockchain</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right nomarginb">
+                                <a href="#" class="closemodal">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-yel" type="button" id="randomName">
+                                                Random
+                                            </button>
+                                        </div>
+                                        <input class="form-control text-center" type="text" placeholder="type here" id="nameInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="small">
+                                <br>
+                                Names must follow these rules:<br>
+                                -Must be unique <i>[<a style="color:#00c9ed" href="https://fomo3d.eu/">database of unique names</a>]</i><br>
+                                -32 Characters or Less<br>
+                                -A-Z (lowercase)<br>
+                                -Name cannot be <i>just</i> numbers, but numbers are allowed<br>
+                                -No special characters<br>
+                                -No more than one space between characters<br>
+                                <br>
+                                If the transaction fails, one of these criteria was not met properly. <br>
+                                <br>
+                                Names are yours permanently (for vanity URLS). But only your most recent name will show up on the leaderboard/game UI. You can own as many names as you'd like.<br><br>
+
+                                Make it good.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-purp btn-block btn-lg" id="namePurchase"><i class="fab fa-ethereum"></i> Purchase for 0.01 ETH</button>
+                            <p style="font-size:0.7rem;color:#afafaf"> The fee is distributed across community members who made this game possible.</p>
+                        </div>
+                    </div>
+                    <!-- /Name chooser -->
+                </div>
+            </div>
+        </div>
+    </div>
+</state-vanity>
+
+<state-metamask>
+    <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 99999999;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+                    <div class="row justify-content-between">
+                        <div class="col-auto">
+                            Please check your Metamask...
+                        </div>
+                        <div class="col-2">
+                            <div class="miniloader"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</state-metamask>
