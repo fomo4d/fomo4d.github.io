@@ -29,7 +29,7 @@
             <h4 class="display-4 scammed" style="font-style: italic;" if={!$this.playerIsLeader && JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] !=  "0x0000000000000000000000000000000000000000000000000000000000000000"}>
             {JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8])}即将赢得</h4>
             <h4 class="display-4 scammed" style="font-style: italic;" if={!$this.playerIsLeader && JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] ==  "0x0000000000000000000000000000000000000000000000000000000000000000"}>
-            无名氏即将赢得</h4>
+            无名氏将赢得</h4>
             <h1 class="display-1 scammed" if={!$this.playerIsLeader && !$this.gracePeriod}>终极大奖</h1>
             <h1 class="display-1 scammed" if={$this.playerIsLeader && !$this.gracePeriod}>你就要走上人生巅峰了！</h1>
             <h1 class="display-1 scammed" if={!$this.playerIsLeader && $this.gracePeriod}>ICO阶段</h1>
