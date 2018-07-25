@@ -196,7 +196,7 @@
                         <hr>
                         <div class="row marginb">
                             <div class="col">
-                                <p class="lead nomarginb">选择队伍</p>
+                                <p class="lead nomarginb">选择战队</p>
                             </div>
                             <div class="col-auto">
                                 <p class="text-right nomarginb tutorial">
@@ -416,7 +416,7 @@
                             <div class="col-auto">
                                 <p class="text-right nomarginb tutorial">
                                     <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                                    <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Exit Scams and You!" data-content="{popover.purchase}">
+                                    <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="立即加入游戏！" data-content="{popover.purchase}">
                                     <i class="far fa-question-circle"></i>
                                     </a>
                                 </p>
@@ -428,7 +428,7 @@
                         <div class="row">
                           <div class="col">
                             <div id="purchase" class="tab-pane fade show active" role="tabpanel">
-                                <p class="font-weight-light small" if={!$this.roundHasPassed} id ="airdrop_chance">花费0.1ETH以上，你将有{JUST.Cache.airdropTracker}%机会立刻获得部分{JUST.Cache.airdropPot}ETH空投池!</p>
+                                <p class="font-weight-light small" if={!$this.roundHasPassed} id ="airdrop_chance">购买0.1ETH以上，有{JUST.Cache.airdropTracker}%机会立刻获得{JUST.Cache.airdropPot}ETH空投池的一部分!</p>
                             <p class="text-center" if={$this.roundHasPassed}>发送ETH开始下一轮</p>
                             <div class="row" id="purchase" if={!$this.roundHasPassed}>
                               <div class="col">
@@ -500,12 +500,12 @@
                         <hr>
                         <div class="row marginb">
                             <div class="col">
-                                <p class="lead nomarginb">选择队伍</p>
+                                <p class="lead nomarginb">选择战队</p>
                             </div>
                             <div class="col-auto">
                                 <p class="text-right nomarginb tutorial">
                                 <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                                    <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Pick where the Eth Goes!" data-content="{popover.teamselect}"><i class="far fa-question-circle"></i></a></p>
+                                    <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="决定资金流向！" data-content="{popover.teamselect}"><i class="far fa-question-circle"></i></a></p>
                             </div>
                         </div>
                         <div class="row marginb distribution">
@@ -516,10 +516,10 @@
                                             <input class="form-check-input form-radio teamsave" type="radio" autocomplete="off" name="teamselect" value="2" id="teamsnek">
                                             <img src="./img/tsnek.png" alt="">
                                             <h5>蛇队</h5>
-                                            <p>互帮互助，团结致胜。</p>
+                                            <p>点滴获益<br>分红均沾</p>
                                         </label>
                                         <div>
-                                        <p style="color:#2ecc71">++ 分红最多</p>
+                                        <p style="color:#2ecc71">++ 分红最多！一起分红吧</p>
                                         </div>
                                     </div>
                                     <div class="col-3 team">
@@ -527,16 +527,16 @@
                                             <input class="form-check-input form-radio teamsave" type="radio" autocomplete="off" name="teamselect" value="0" id="teamwhale">
                                             <img src="./img/twhale.png" alt="">
                                             <h5>鲸队</h5>
-                                            <p>利用他人，鼓动贪婪。</p>
+                                            <p>扩大奖池<br>刺激贪婪</p>
                                         </label>
-                                        <p style="color:#2ecc71">++ 进入奖池最多</p>
+                                        <p style="color:#2ecc71">++ 大部分金额进入奖池</p>
                                     </div>
                                     <div class="col-3 team">
                                         <label class="teamselector">
                                             <input class="form-check-input form-radio teamsave" type="radio" autocomplete="off" name="teamselect" value="3" id="teambull">
                                             <img src="./img/tbull.png" alt="">
                                             <h5>牛队</h5>
-                                            <p>持续向上，永不停歇。</p>
+                                            <p>向上突破<br>永不停歇</p>
                                         </label>
                                         <p style="color:#2ecc71">+ 平衡分配</p>
 
@@ -546,9 +546,9 @@
                                             <input class="form-check-input form-radio teamsave" type="radio" autocomplete="off" name="teamselect" value="1" id="teambear">
                                             <img src="./img/tbear.png" alt="">
                                             <h5>熊队</h5>
-                                            <p>万事由己，单打独斗。</p>
+                                            <p>独善其身<br>舍我其谁</p>
                                         </label>
-                                        <p style="color:#2ecc71">++ 进入本轮最多</p>
+                                        <p style="color:#2ecc71">++ 本轮奖励最大化</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -573,7 +573,7 @@
                           <div class="col-auto">
                             <p class="text-right nomarginb tutorial">
                                 <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                            <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Vault 77: Where you keep the puppets" data-content="{popover.vault}">
+                            <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="你的私人小金库" data-content="{popover.vault}">
                             <i class="far fa-question-circle"></i>
                             </a>
                           </div>
@@ -591,7 +591,7 @@
 
                             <div class="row">
                             <div class="col">
-                              <p class="lead">锁定金额</p>
+                              <p class="lead">锁定奖金</p>
                             </div>
                             <div class="col">
                             <!--
@@ -603,7 +603,7 @@
 
                           <div class="row">
                             <div class="col">
-                              <p class="lead">奖励金额</p>
+                              <p class="lead">立返奖金</p>
                             </div>
                             <div class="col">
                               <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
@@ -612,7 +612,7 @@
 
                           <div class="row">
                             <div class="col">
-                              <p class="lead">邀请分红</p>
+                              <p class="lead">邀请奖金</p>
                             </div>
                             <div class="col">
                               <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
@@ -650,7 +650,7 @@
                           <div class="col-auto">
                             <p class="text-right nomarginb tutorial">
                                 <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                            <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Probably Bribery" data-content="{popover.referral}">
+                            <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="邀请好友得奖励" data-content="{popover.referral}">
                             <i class="far fa-question-circle"></i>
                             </a>
                           </div>
@@ -712,7 +712,7 @@
                 <!-- tabs -->
                 <ul class="nav nav-tabs tabs-border-adjust" id="statTabs" role="tablist">
                   <li class="nav-item tab-item">
-                    <a class="nav-link tab-link active" id="potTab" data-toggle="tab" href="#potArea" role="tab" aria-controls="potArea" aria-selected="true">回合</a>
+                    <a class="nav-link tab-link active" id="potTab" data-toggle="tab" href="#potArea" role="tab" aria-controls="potArea" aria-selected="true">摘要</a>
                   </li>
                   <li class="nav-item tab-item">
                     <a class="nav-link tab-link" id="teamTab" data-toggle="tab" href="#teamArea" role="tab" aria-controls="teamArea" aria-selected="false">战队</a>
@@ -735,7 +735,7 @@
                               <div class="col-auto">
                                 <p class="text-right nomarginb tutorial">
                                     <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                                <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Important Box:" data-content="{popover.game}">
+                                <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="重要数据：" data-content="{popover.game}">
                                 <i class="far fa-question-circle"></i>
                                 </a>
                               </div>
@@ -744,8 +744,8 @@
                             <div class="row nomarginb margin-top" if={!$this.roundHasPassed}>
                                 <div class="col">
                                     <!-- NOTE: Time limit counter -->
-                                    <p class="h2 text-center" if={this.playerIsLeader}>成功夺宝剩余时间<br><span class="glow boxtimer"></span></p>
-                                    <p class="h2 text-center" if={!this.playerIsLeader}>奖池清空剩余时间<br><span class="glow boxtimer"></span></p>
+                                    <p class="h2 text-center" if={this.playerIsLeader}>成功夺宝还需<br><span class="glow boxtimer"></span></p>
+                                    <p class="h2 text-center" if={!this.playerIsLeader}>游戏结束时间<br><span class="glow boxtimer"></span></p>
                                 </div>
                             </div>
                             <div class="row nomarginb margin-top" if={$this.roundHasPassed}>
@@ -765,7 +765,7 @@
                             <div class="jumbotron jumbotron-adjust teamscore">
                                 <div class="row nomarginb">
                                     <div class="col-auto">
-                                        <p class="h4" if={!$this.roundHasPassed}>本轮奖金</p>
+                                        <p class="h4" if={!$this.roundHasPassed}>终极奖池</p>
                                         <p class="h4" if={$this.roundHasPassed}>等待领取</p>
                                     </div>
                                     <div class="col">
@@ -817,7 +817,7 @@
                                   <div class="col-auto">
                                     <p class="text-right nomarginb tutorial">
                                     <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                                    <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Pick a team, get angry at those not on your team." data-content="{popover.teams}">
+                                    <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="选择你的战队" data-content="{popover.teams}">
                                         <i class="far fa-question-circle"></i>
                                     </a>
                                   </div>
@@ -872,12 +872,12 @@
                         <div class="jumbotron jumbotron-adjust text-light bg-dark jumboshade tab-rounded">
                             <div class="row">
                               <div class="col">
-                                <p class="lead nomarginb">第{JUST.Cache.currentRound[1]}轮(本轮)数据</p>
+                                <p class="lead nomarginb">第{JUST.Cache.currentRound[1]}轮数据（当前）</p>
                               </div>
                               <div class="col-auto">
                                 <p class="text-right nomarginb tutorial">
                                     <i class="fas fa-arrow-right pulsetutorial tutorialArrow"></i>
-                                <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="Important Box:" data-content="{popover.stats}">
+                                <a tabindex="0" type="button" class="qbtn" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" title="重要数据：" data-content="{popover.stats}">
                                 <i class="far fa-question-circle"></i>
                                 </a>
                               </div>
