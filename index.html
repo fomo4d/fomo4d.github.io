@@ -142,7 +142,7 @@
 
     var language = localStorage.getItem("language")
 	var language_suffix = ""
-	if (language === undefined || language.length === 0) {
+	if (language == null || language.length === 0) {
         language = "cn"
 	}
 	if (language === "cn") {
