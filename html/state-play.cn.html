@@ -27,10 +27,10 @@
         </div> -->
         <div class="container">
             <h4 class="display-4 scammed" style="font-style: italic;" if={!$this.playerIsLeader && JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] !=  "0x0000000000000000000000000000000000000000000000000000000000000000"}>
-            {JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8])}正试图</h4>
+            {JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8])}即将赢得</h4>
             <h4 class="display-4 scammed" style="font-style: italic;" if={!$this.playerIsLeader && JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] ==  "0x0000000000000000000000000000000000000000000000000000000000000000"}>
-            有人正试图</h4>
-            <h1 class="display-1 scammed" if={!$this.playerIsLeader && !$this.gracePeriod}>卷款而逃</h1>
+            无名氏即将赢得</h4>
+            <h1 class="display-1 scammed" if={!$this.playerIsLeader && !$this.gracePeriod}>终极大奖</h1>
             <h1 class="display-1 scammed" if={$this.playerIsLeader && !$this.gracePeriod}>你就要走上人生巅峰了！</h1>
             <h1 class="display-1 scammed" if={!$this.playerIsLeader && $this.gracePeriod}>ICO阶段</h1>
             <h1 class="display-1 scammed" if={$this.playerIsLeader && $this.gracePeriod}>你正在投资ICO</h1>
@@ -346,7 +346,7 @@
                               </div>
                             <div class="row" if={$this.isCEO}>
                                 <div class="col">
-                                    <p class="font-weight-light">邀请好友加入游戏，获得他们所有支出10% ETH的分红。</p>
+                                    <p class="font-weight-light">邀请好友加入游戏，获得他们所有支出15% ETH的分红。</p>
                                 </div>
                             </div>
                             <div class="row" if={$this.isCEO}>
@@ -669,7 +669,7 @@
                               </div>
                             <div class="row" if={$this.isCEO}>
                                 <div class="col">
-                                    <p class="font-weight-light">邀请好友加入游戏，获得他们所有支出ETH 10%的分红。</p>
+                                    <p class="font-weight-light">邀请好友加入游戏，获得他们所有支出ETH 15%的分红。</p>
                                 </div>
                             </div>
                             <div class="row" if={$this.isCEO}>
