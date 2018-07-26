@@ -37,8 +37,6 @@
 	<title>Fomo4D</title>
 </head>
 <body>
-<module-bash>
-</module-bash>
 <!-- <div class="blurryboy"></div> -->
 <div id="main-wrapper">
 	<!-- navigation -->
@@ -92,6 +90,10 @@
 </module-airdrop>
 <module-modal>
 </module-modal>
+<module-payment>
+</module-payment>
+<module-address>
+</module-address>
 <!-- /main content -->
 </div>
 
@@ -134,9 +136,7 @@
 <script src="js/fontawesome-all.min.js"></script>
 <script>
     if(!localStorage.getItem("seenNote")){
-        // Start phishing warning on load
         jQuery("#starting_note").modal()
-
         localStorage.setItem("seenNote", true)
     }
 

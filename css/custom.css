@@ -1501,3 +1501,10 @@ input:checked + .slider:before {
   -moz-user-select: none;
   user-select: none;
 }
+
+.qr-container {
+	background-color: white;
+	padding: 5px;
+	width: fit-content;
+	display: inline-block;
+}

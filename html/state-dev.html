@@ -61,6 +61,7 @@
                         <a class="dropdown-toggle nav-link nav-link-purp small" style="padding: 2px" data-toggle="dropdown" href="#">Misc
                             <span class="caret"></span></a>
                         <div class="dropdown-menu">
+                            <a class="dropdown-item dropdown-item bindAddress" target="_new" href="javascript:void(0)">Bind Address</a>
                             <a class="dropdown-item dropdown-item" target="_new" href="https://fomo3d.hostedwiki.co/">Wiki: Quick Start Guide</a>
                             <a class="dropdown-item dropdown-item" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">Contract<br></a>
                         </div>
@@ -94,6 +95,13 @@
                         <span class="small" style="cursor:pointer" onclick="switchLanguage('cn')">中文</span>
                     </div>
                 </div>
+
+                <div class="d-flex only-mobile">
+                    <div class="p-2">
+                        <a class="small bindAddress" href="javascript:void(0)">Bind Address</a>
+                    </div>
+                </div>
+
                 <div class="d-flex only-mobile">
                     <div class="p-2">
                         <a class="small" target="_new" href="https://fomo3d.hostedwiki.co/">Wiki: Quick Start Guide</a>
@@ -293,3 +301,110 @@
         </div>
     </div>
 </state-metamask>
+
+
+<state-payment>
+    <div class="modal fade" id="paymentPopup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+                    <!-- Name chooser -->
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead nomarginb">Wallet（ImToken）Transfer</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right nomarginb">
+                                <a href="#" class="closePayment">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <span>Scan or copy address, select advanced and input following information</span><br>
+                    <br>
+
+                    <div class="text-center">
+                        <span>Receiver's Address</span><br>
+                        <div class="qr-container">
+                            <img src="./img/qrcode.png" alt="">
+                        </div>
+
+
+                        <span class="small" id="contractAddress"></span><br>
+                        <button class="btn btn-outline-purp" id="copyContractAddress" data-clipboard-target="#contractAddress">
+                            <i class="fas fa-paste"></i> Copy</button>
+                    </div>
+                    <br>
+                    <div class="row text-center">
+                        <div class="col"><span>Gas Price:</span></div>
+                        <div class="col"><span class="small">20</span></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col"><span>Gas Limit:</span></div>
+                        <div class="col"><span class="small">1000000</span></div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col"><span>ETH Amount:</span></div>
+                        <div class="col"><span class="small" id="transactionAmount"></span></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="text-center btn btn-outline-purp" id="copyTransactionAmount" data-clipboard-target="#transactionAmount">
+                            <i class="fas fa-paste"></i> Copy
+                        </button>
+                    </div>
+
+                    <br>
+                    <div class="text-center">
+                        <span>Data</span><br>
+                        <span class="small" id="transactionData" style="word-break: break-word"></span>
+                        <br>
+                        <button class="btn btn-outline-purp" id="copyTransactionData" data-clipboard-target="#transactionData">
+                            <i class="fas fa-paste"></i> 拷贝</button>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-block btn-lg btn-secondary btn-purp" data-dismiss="modal">Dismiss</button>
+            </div>
+        </div>
+    </div>
+</state-payment>
+
+<state-address>
+    <div class="modal fade" id="addressPopup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
+                    <!-- Name chooser -->
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead nomarginb">请输入ETH地址</p>
+                        </div>
+                        <div class="col-auto">
+                            <p class="text-right nomarginb">
+                                <a href="#" class="closeAddress">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    Metamask not found, please input your ETH address to fully enjoy the game
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control text-center" type="text" placeholder="ETH Address" id="addressInput">
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <button type="button" id="confirmAddress" class="btn btn-block btn-lg btn-secondary btn-purp">Confirm Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</state-address>
