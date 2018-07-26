@@ -273,20 +273,12 @@
                         </div>
                         <hr>
                         <div class="jumbotron jumbotron-adjust teamscore">
-                        <!--  <div class="row">
-                            <div class="col">
-                              <p class="lead">Winning Pot (Unused)</p>
-                            </div>
-                            <div class="col">
-                              <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
-                            </div>
-                          </div> -->
                           <div class="row">
                             <div class="col">
                               <p class="lead">奖励金额</p>
                             </div>
                             <div class="col">
-                              <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
                             </div>
                           </div>
                           <div class="row">
@@ -294,7 +286,7 @@
                               <p class="lead">邀请分红</p>
                             </div>
                             <div class="col">
-                              <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
                             </div>
                           </div>
                           <hr>
@@ -303,7 +295,7 @@
                               <p class="lead">总体收益</p>
                             </div>
                             <div class="col">
-                              <p class="h3 text-right glow">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right glow">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
                               <p class="text-right">&#8793; {BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).multipliedBy(JUST.Cache.fiatRatios.USD).toFixed(5)} USDT</p>
                             </div>
                           </div>
@@ -580,24 +572,13 @@
                         </div>
                         <hr>
                         <div class="jumbotron jumbotron-adjust teamscore">
-                        <!--  <div class="row">
-                            <div class="col">
-                              <p class="lead">Winning Pot (Unused)</p>
-                            </div>
-                            <div class="col">
-                              <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
-                            </div>
-                          </div> -->
 
                             <div class="row">
                             <div class="col">
                               <p class="lead">锁定奖金</p>
                             </div>
                             <div class="col">
-                            <!--
-                              <p class="h6 text-right" style="font-size: .9rem">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) ? ((BN(JUST.Cache.currentPlayer.Round[2]).div(1e18).toFixed(1) : BN(0).toFixed(4)).div(BN(JUST.Cache.currentRound[2]).div(1e18).toFixed(0))).mul((BN(JUST.Cache.currentRound[5]).div(1e18).toFixed(4).div(100)).mul(30))}</p>
-                              -->
-                              <p class="h3 text-right" label=poteth>{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) ? (((BN(JUST.Cache.currentRound[5]).div(100).multipliedBy(30)).div(BN(JUST.Cache.currentRound[2]))).multipliedBy(BN(JUST.Cache.currentPlayer.Round[2])).div(1e18).toFixed(4)) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right" label=poteth>{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Round) ? (((BN(JUST.Cache.currentRound[5]).div(100).multipliedBy(30)).div(BN(JUST.Cache.currentRound[2]))).multipliedBy(BN(JUST.Cache.currentPlayer.Round[2])).div(1e18).toFixed(4)) : BN(0).toFixed(4)} ETH</p>
                             </div>
                           </div>
 
@@ -606,7 +587,7 @@
                               <p class="lead">立返奖金</p>
                             </div>
                             <div class="col">
-                              <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[0]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
                             </div>
                           </div>
 
@@ -615,7 +596,7 @@
                               <p class="lead">邀请奖金</p>
                             </div>
                             <div class="col">
-                              <p class="h3 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
                             </div>
                           </div>
 
@@ -625,7 +606,7 @@
                               <p class="lead">总体收益</p>
                             </div>
                             <div class="col">
-                              <p class="h3 text-right glow">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn && JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
+                              <p class="h3 text-right glow">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
                               <p class="text-right">&#8793; {BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).multipliedBy(JUST.Cache.fiatRatios.USD).toFixed(5)} USDT</p>
                             </div>
                           </div>
@@ -783,7 +764,7 @@
                                       <p class="h4">持有钥匙</p>
                                     </div>
                                     <div class="col">
-                                      <p class="h2 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) ? BN(JUST.Cache.currentPlayer.Round[2]).div(1e18).toFormat(1) : BN(0).toFormat(4)} <i class="fas fa-key"></i></p>
+                                      <p class="h2 text-right">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Round) ? BN(JUST.Cache.currentPlayer.Round[2]).div(1e18).toFormat(1) : BN(0).toFormat(4)} <i class="fas fa-key"></i></p>
                                     </div>
                                 </div>
                                   <div class="row marginb" if={!$this.roundHasPassed}>
@@ -794,7 +775,7 @@
                                       <p class="h4">获得收益</p>
                                     </div>
                                     <div class="col">
-                                      <p class="h2 text-right">{(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFormat(4) : BN(0).toFormat(5)} <i class="fab fa-ethereum"></i></p>
+                                      <p class="h2 text-right">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFormat(4) : BN(0).toFormat(5)} <i class="fab fa-ethereum"></i></p>
                                     </div>
                                 </div>
                                 <div class="row marginb">
