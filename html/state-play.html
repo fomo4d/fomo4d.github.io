@@ -299,7 +299,7 @@
                             </div>
                             <div class="col">
                               <p class="h3 text-right glow">{(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).toFixed(4) : BN(0).toFixed(4)} ETH</p>
-                              <p class="text-right">&#8793; {BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).multipliedBy(JUST.Cache.fiatRatios.USD).toFixed(5)} USDT</p>
+                              <p class="text-right">&#8793; {(JUST.Cache.currentPlayer && JUST.Cache.currentPlayer.Vaults) ? BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]).div(1e18).multipliedBy(JUST.Cache.fiatRatios.USD).toFixed(5) :  : BN(0).toFixed(5)} USDT</p>
                             </div>
                           </div>
                           <div class="row">

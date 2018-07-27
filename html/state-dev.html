@@ -1,25 +1,6 @@
-<state-dev-page>
-    <h1>dev</h1>
-    <script>
-        this.on('mount', function(){
-            console.log('time to develop')
-        })
-    </script>
-</state-dev-page>
-
 <state-loading>
-    <center><h1 style="color: white;">Loading...</h1></center>
+    <center><h1 style="color: white;">{messages.loading}</h1></center>
 </state-loading>
-
-<state-error-notfound>
-    <center>
-        <h1>Page not found</h1>
-    </center>
-</state-error-notfound>
-
-<state-home>
-    <h1>Home</h1>
-</state-home>
 
 <module-navbar>
     <div></div>
@@ -28,8 +9,7 @@
 <state-navbar>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark jumboshade">
         <div class="container">
-            <!-- NOTE: will be replaced by a smexy Logo once Justo makes one -->
-            <a class="navbar-brand" style="font-size:1.5rem" href="/shakedown">
+            <a class="navbar-brand" style="font-size:1.5rem" href="/">
                 FOMO 4D
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,46 +22,37 @@
                         <i class="fas fa-stopwatch"></i> <span class="boxtimer lead small">00:00</span>
                     </div>
                     <div class="col-auto yourkeys">
-                        <i class="fas fa-key"></i> <!-- <span class="lead small" if={$this.gracePeriod}>&asymp;</span> --> <span class="lead small keycount">0000</span>
+                        <i class="fas fa-key"></i><span class="lead small keycount">0000</span>
                     </div>
                     <div class="col-auto airdrop">
                         <i class="fas fa-parachute-box"></i> <span class="airdropcounter lead small">{JUST.Cache.airdropTracker}% ({JUST.Cache.airdropPot} ETH)</span>
                     </div>
                     <div class="col-auto mr-auto afflink">
-                        <i class="fas fa-link"></i> <span class="lead small"><a href="javascript:void(0)" class="buyceo glow">Register a name</a></span>
+                        <i class="fas fa-link"></i> <span class="lead small"><a href="javascript:void(0)" class="buyceo glow">{messages.registerName}</a></span>
                     </div>
                     <div class="col-auto">
-                        <span class="small">Tutorials</span>
+                        <span class="small">{messages.tutorials}</span>
                         <label class="switch">
                             <input id="tutorialswitch" onclick="tutorials()" type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </div>
                     <div class="col-auto dropdown nav-item">
-                        <a class="dropdown-toggle nav-link nav-link-purp small" style="padding: 2px" data-toggle="dropdown" href="#">Misc
+                        <a class="dropdown-toggle nav-link nav-link-purp small" style="padding: 2px" data-toggle="dropdown" href="javascript:void(0)">{messages.misc}
                             <span class="caret"></span></a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item dropdown-item bindAddress" target="_new" href="javascript:void(0)">Bind Address</a>
-                            <a class="dropdown-item dropdown-item" target="_new" href="https://fomo3d.hostedwiki.co/">Wiki: Quick Start Guide</a>
-                            <a class="dropdown-item dropdown-item" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">Contract<br></a>
+                            <a class="dropdown-item dropdown-item bindAddress" target="_new" href="javascript:void(0)">{messages.bindAddress}</a>
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://fomo3d.hostedwiki.co/">{messages.quickStart}</a>
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">{messages.contract}<br></a>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <span class="small" style="cursor:pointer" onclick="switchLanguage('cn')">中文</span>
+                        <span class="small" style="cursor:pointer" onclick="switchLanguage()">{messages.languageSwitch}</span>
                     </div>
-                    <!--
-                    <div class="col-auto">
-                      <span class="small">Fancy Mode</span>
-                      <label class="switch">
-                        <input id="fancyswitch" onclick="graphicslow()" type="checkbox">
-                        <span class="slider round"></span>
-                      </label>
-                    </div>
-                      -->
                 </ul>
                 <div class="d-flex only-mobile">
                     <div class="p-2">
-                        <span class="small">Tutorials</span>
+                        <span class="small">{messages.tutorials}</span>
                     </div>
                     <div class="ml-auto p-2">
                         <label class="switch">
@@ -92,29 +63,27 @@
                 </div>
                 <div class="d-flex only-mobile">
                     <div class="p-2">
-                        <span class="small" style="cursor:pointer" onclick="switchLanguage('cn')">中文</span>
-                    </div>
-                </div>
-
-                <div class="d-flex only-mobile">
-                    <div class="p-2">
-                        <a class="small bindAddress" href="javascript:void(0)">Bind Address</a>
-                    </div>
-                </div>
-
-                <div class="d-flex only-mobile">
-                    <div class="p-2">
-                        <a class="small" target="_new" href="https://fomo3d.hostedwiki.co/">Wiki: Quick Start Guide</a>
+                        <a class="small bindAddress" href="javascript:void(0)">{messages.bindAddress}</a>
                     </div>
                 </div>
                 <div class="d-flex only-mobile">
                     <div class="p-2">
-                        <a class="small" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">Contract<br></a>
+                        <a class="small" target="_new" href="https://fomo3d.hostedwiki.co/">{messages.quickStart}</a>
+                    </div>
+                </div>
+                <div class="d-flex only-mobile">
+                    <div class="p-2">
+                        <a class="small" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">{messages.contract}<br></a>
+                    </div>
+                </div>
+                <div class="d-flex only-mobile">
+                    <div class="p-2">
+                        <span class="small" style="cursor:pointer" onclick="switchLanguage('en')">{messages.languageSwitch}</span>
                     </div>
                 </div>
                 <div class="d-flex only-mobile">
                     <div class="p-2 afflink">
-                        <i class="fas fa-link"></i> <span class="lead small ceoshort"><a href="javascript:void(0)" class="buyceo glow">Register a name</a></span>
+                        <i class="fas fa-link"></i> <span class="lead small ceoshort"><a href="javascript:void(0)" class="buyceo glow">{messages.registerName}</a></span>
                     </div>
                 </div>
             </div>
@@ -135,18 +104,6 @@
     </nav>
 </state-navbar>
 
-<state-how-to>
-    <div class="container" style="margin-top:5.5rem;">
-        You don't.
-    </div>
-</state-how-to>
-
-<state-about>
-    <div class="container" style="margin-top:5.5rem;">
-        Made by Team Just, the just you can trust.
-    </div>
-</state-about>
-
 <state-modal>
     <div if={this.playerWon}>
         <!-- modal popup -->
@@ -154,7 +111,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content bg-dark text-light">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="gameoverTitle">A Winrar is you!</h5>
+                        <h5 class="modal-title" id="gameoverTitle">{messages.winner}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -162,16 +119,16 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
-                                <p>Congratulations! You exit scammed with <span class="ethAmount">ETH</span>.</p>
-                                <p>Buy a ticket to start a new round or withdraw your winnings.</p>
+                                <p>{messages.winMessage}<span class="ethAmount">ETH</span></p>
+                                <p>{messages.winMessage2}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-block btn-outline-purp" id="withdrawEarnings">Withdraw Winnings</button>
+                                <button class="btn btn-block btn-outline-purp" id="withdrawEarnings">{messages.withdrawAward}</button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-block btn-purp">Buy New Tickets</button>
+                                <button class="btn btn-block btn-purp">{messages.buyNewKey}</button>
                             </div>
                         </div>
                     </div>
@@ -196,18 +153,16 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
-                                <p>You lose!</p>
-                                <p>Someone managed to exit scam with <span class="ethAmount">NaN</span> in total ETH.</p>
-                                <p>But don't worry, you got your fair share too.</p>
-                                <p><span class="ethLoss">NaN</span> ETH have been accredited to your vault.</p>
+                                <p>{messages.loser}</p>
+                                <p>{messages.loserMessage}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-block btn-outline-purp">Withdraw Personal Exit Scam</button>
+                                <button class="btn btn-block btn-outline-purp">{messages.withdrawAward}</button>
                             </div>
                             <div class="col">
-                                <button class="btn btn-block btn-purp">Fomo Into Next Round</button>
+                                <button class="btn btn-block btn-purp">{messages.buyNewKey}</button>
                             </div>
                         </div>
                     </div>
@@ -219,6 +174,8 @@
 </state-modal>
 
 <state-vanity>
+    <!-- /modal loading -->
+    <!-- modal vanity -->
     <div class="modal fade" id="vanity" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content bg-dark text-light">
@@ -226,11 +183,11 @@
                     <!-- Name chooser -->
                     <div class="row">
                         <div class="col">
-                            <p class="lead nomarginb">Graffiti your name on the Blockchain</p>
+                            <p class="lead nomarginb">{messages.namePurchaseTitle}</p>
                         </div>
                         <div class="col-auto">
                             <p class="text-right nomarginb">
-                                <a href="#" class="closemodal">
+                                <a href="javascript:void(0)" class="closemodal">
                                     <i class="fas fa-times"></i>
                                 </a>
                             </p>
@@ -244,36 +201,35 @@
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <button class="btn btn-outline-yel" type="button" id="randomName">
-                                                Random
+                                                {messages.random}
                                             </button>
                                         </div>
-                                        <input class="form-control text-center" type="text" placeholder="type here" id="nameInput">
+                                        <input class="form-control text-center" type="text" placeholder={messages.nameInputPlaceholder} id="nameInput">
                                     </div>
                                 </div>
                             </div>
                             <p class="small">
                                 <br>
-                                Names must follow these rules:<br>
-                                -Must be unique <i>[<a style="color:#00c9ed" href="https://fomo3d.eu/">database of unique names</a>]</i><br>
-                                -32 Characters or Less<br>
-                                -A-Z (lowercase)<br>
-                                -Name cannot be <i>just</i> numbers, but numbers are allowed<br>
-                                -No special characters<br>
-                                -No more than one space between characters<br>
+                                {messages.nameMessage1}<br>
+                                -{messages.nameMessage2}<br>
+                                -{messages.nameMessage3}<br>
+                                -{messages.nameMessage4}<br>
+                                -{messages.nameMessage5}<br>
+                                -{messages.nameMessage6}<br>
+                                -{messages.nameMessage7}<br>
                                 <br>
-                                If the transaction fails, one of these criteria was not met properly. <br>
+                                {messages.nameMessage8}<br>
                                 <br>
-                                Names are yours permanently (for vanity URLS). But only your most recent name will show up on the leaderboard/game UI. You can own as many names as you'd like.<br><br>
+                                {messages.nameMessage9}<br><br>
 
-                                Make it good.
-
+                                {messages.nameMessage10}
                             </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button class="btn btn-purp btn-block btn-lg" id="namePurchase"><i class="fab fa-ethereum"></i> Purchase for 0.01 ETH</button>
-                            <p style="font-size:0.7rem;color:#afafaf"> The fee is distributed across community members who made this game possible.</p>
+                            <button class="btn btn-purp btn-block btn-lg" id="namePurchase"><i class="fab fa-ethereum"></i> {messages.namePurchaseConfirm}</button>
+                            <p style="font-size:0.7rem;color:#afafaf"> {messages.namePurchaseFinePrint}</p>
                         </div>
                     </div>
                     <!-- /Name chooser -->
@@ -290,7 +246,7 @@
                 <div class="modal-body" style="padding-top:1.5rem; padding-bottom:1.5rem;">
                     <div class="row justify-content-between">
                         <div class="col-auto">
-                            Please check your Metamask...
+                            {messages.checkMetamask}
                         </div>
                         <div class="col-2">
                             <div class="miniloader"></div>
@@ -302,7 +258,6 @@
     </div>
 </state-metamask>
 
-
 <state-payment>
     <div class="modal fade" id="paymentPopup" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -311,11 +266,11 @@
                     <!-- Name chooser -->
                     <div class="row">
                         <div class="col">
-                            <p class="lead nomarginb">Wallet（ImToken）Transfer</p>
+                            <p class="lead nomarginb">{messages.walletTransfer}</p>
                         </div>
                         <div class="col-auto">
                             <p class="text-right nomarginb">
-                                <a href="#" class="closePayment">
+                                <a href="javascript:void(0)" class="closePayment">
                                     <i class="fas fa-times"></i>
                                 </a>
                             </p>
@@ -323,11 +278,11 @@
                     </div>
                     <hr>
 
-                    <span>Scan or copy address, select advanced and input following information</span><br>
+                    <span>{messages.transferPrompt}</span><br>
                     <br>
 
                     <div class="text-center">
-                        <span>Receiver's Address</span><br>
+                        <span>{messages.transactionReceiverAddress}</span><br>
                         <div class="qr-container">
                             <img src="./img/qrcode.png" alt="">
                         </div>
@@ -335,43 +290,44 @@
 
                         <span class="small" id="contractAddress"></span><br>
                         <button class="btn btn-outline-purp" id="copyContractAddress" data-clipboard-target="#contractAddress">
-                            <i class="fas fa-paste"></i> Copy</button>
+                            <i class="fas fa-paste"></i> {messages.copy}</button>
                     </div>
                     <br>
                     <div class="row text-center">
-                        <div class="col"><span>Gas Price:</span></div>
+                        <div class="col"><span>{messages.transactionGasPrice}</span></div>
                         <div class="col"><span class="small">20</span></div>
                     </div>
                     <div class="row text-center">
-                        <div class="col"><span>Gas Limit:</span></div>
+                        <div class="col"><span>{messages.transactionGasLimit}</span></div>
                         <div class="col"><span class="small">1000000</span></div>
                     </div>
                     <div class="row text-center">
-                        <div class="col"><span>ETH Amount:</span></div>
+                        <div class="col"><span>{messages.transactionEthAmount}</span></div>
                         <div class="col"><span class="small" id="transactionAmount"></span></div>
                     </div>
 
                     <div class="text-center">
                         <button class="text-center btn btn-outline-purp" id="copyTransactionAmount" data-clipboard-target="#transactionAmount">
-                            <i class="fas fa-paste"></i> Copy
+                            <i class="fas fa-paste"></i> {messages.copy}
                         </button>
                     </div>
 
                     <br>
                     <div class="text-center">
-                        <span>Data</span><br>
+                        <span>{messages.transactionData}</span><br>
                         <span class="small" id="transactionData" style="word-break: break-word"></span>
                         <br>
                         <button class="btn btn-outline-purp" id="copyTransactionData" data-clipboard-target="#transactionData">
-                            <i class="fas fa-paste"></i> 拷贝</button>
+                            <i class="fas fa-paste"></i> {messages.copy}</button>
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-block btn-lg btn-secondary btn-purp" data-dismiss="modal">Dismiss</button>
+                <button type="button" class="btn btn-block btn-lg btn-secondary btn-purp" data-dismiss="modal">{messages.dismiss}</button>
             </div>
         </div>
     </div>
 </state-payment>
+
 
 <state-address>
     <div class="modal fade" id="addressPopup" tabindex="-1" role="dialog" aria-hidden="true">
@@ -381,28 +337,28 @@
                     <!-- Name chooser -->
                     <div class="row">
                         <div class="col">
-                            <p class="lead nomarginb">请输入ETH地址</p>
+                            <p class="lead nomarginb">{messages.bindAddressTitle}</p>
                         </div>
                         <div class="col-auto">
                             <p class="text-right nomarginb">
-                                <a href="#" class="closeAddress">
+                                <a href="javascript:void(0)" class="closeAddress">
                                     <i class="fas fa-times"></i>
                                 </a>
                             </p>
                         </div>
                     </div>
                     <hr>
-                    Metamask not found, please input your ETH address to fully enjoy the game
+                    {messages.bindAddressMessage}
                     <br>
                     <br>
                     <div class="row">
                         <div class="col">
-                            <input class="form-control text-center" type="text" placeholder="ETH Address" id="addressInput">
+                            <input class="form-control text-center" type="text" placeholder={messages.bindAddressPlaceholder} id="addressInput">
                         </div>
                     </div>
                     <br>
                     <hr>
-                    <button type="button" id="confirmAddress" class="btn btn-block btn-lg btn-secondary btn-purp">Confirm Address</button>
+                    <button type="button" id="confirmAddress" class="btn btn-block btn-lg btn-secondary btn-purp">{messages.bindAddressConfirm}</button>
                 </div>
             </div>
         </div>
