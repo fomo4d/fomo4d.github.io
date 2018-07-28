@@ -90,7 +90,7 @@
 
 
         <!-- Eth Amount -->
-        <h2 class="display-3"><span class="ethglitch titleglow">{BN(JUST.Cache.currentRound[5]).div(1e18).toFixed(4)} <i class="fab fa-ethereum ethglow"></i></span> <span class="headtimer" if={!$this.playerIsLeader}>drained by <a href="javascript:void(0)">{(JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] !=  "0x0000000000000000000000000000000000000000000000000000000000000000" ? JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8]) : JUST.Cache.currentRound[7].substr(0, 10).concat("..."))}</a>!</span></h2>
+        <h2 class="display-3"><span class="ethglitch titleglow">{BN(JUST.Cache.currentRound[5]).div(1e18).toFixed(4)} <i class="fab fa-ethereum ethglow"></i></span> <span class="headtimer" if={!$this.playerIsLeader}>大奖被 {(JUST.Cache.currentRound[8] && JUST.Cache.currentRound[8] !=  "0x0000000000000000000000000000000000000000000000000000000000000000" ? JUST.Bridges.Browser.web3.utils.toAscii(JUST.Cache.currentRound[8]) : JUST.Cache.currentRound[7].substr(0, 10).concat("..."))} 拿走了</span></h2>
 
         <!-- Custom RNG winner text -->
         <h6 class="display-5 scammed" if={!$this.gracePeriod && $this.playerIsLeader}>你将得到大约50%，并平分剩余</h6>
