@@ -86180,7 +86180,8 @@ class PlayModel {
         jQuery(".vanity").click(that.buyName);
 
         jQuery(".buyOneTicket").click(async e  => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
             let priceQuotation = await JUST.Bridges.Browser.contracts.Fomo3D.read('iWantXKeys', [BN(1050000000000000000)])
             await that.purchaseKey(priceQuotation, that.getTeam());
         })
@@ -86194,7 +86195,8 @@ class PlayModel {
          * When the purchase button is clicked.
          */
         jQuery("#tixBuy").click( async e => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
 
             let count = String(jQuery("#tixToBuy").val()).replace("keys", "").replace("key", "").replace("Keys", "").replace("Key", "")
             if(!Number.isInteger(parseInt(count))) return
@@ -86208,7 +86210,8 @@ class PlayModel {
          * When the reinvest button is clicked.
          */
         jQuery("#tixReinvest").click( async e => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
 
             let vaultEarnings = BN(JUST.Cache.currentPlayer.Vaults[0]).plus(JUST.Cache.currentPlayer.Vaults[1]).plus(JUST.Cache.currentPlayer.Vaults[2]);
             let count = String(jQuery("#tixToBuy").val()).replace("keys", "").replace("key", "").replace("Keys", "").replace("Key", "");
@@ -86224,7 +86227,8 @@ class PlayModel {
          * When the ICO invest button is pressed
          */
         jQuery("#ethSpend").click( async e => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
 
             let count = String(jQuery("#ethToSpend").val()).replace("ethereum", "").replace("Ethereum", "").replace("eth", "").replace("ETH", "")
             if(!Number.isInteger(parseInt(count))) return;
@@ -86237,7 +86241,8 @@ class PlayModel {
          * When the ICO invest button is pressed
          */
         jQuery("#ethReinvest").click( async e => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
 
             let count = String(jQuery("#ethToSpend").val()).replace("ethereum", "").replace("Ethereum", "").replace("eth", "").replace("ETH", "");
             if(!Number.isInteger(parseInt(count))) return;
@@ -86247,12 +86252,14 @@ class PlayModel {
         });
 
         jQuery("#withdrawEarnings").click(async e => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
             await that.makeRequest("withdraw", [], 0, messages.withdraw);
         });
 
         jQuery("#namePurchase").click(async e => {
-            if (! await that.checkNetwork()) return;
+            let result = await that.checkNetwork();
+            if (!result) return;
             let name = jQuery("#nameInput").val();
             var ref = that.determineRef(true)
             await that.makeRequest("registerName" + ref.method, [name,  ref.refValue, true], BN(1e16).toString(), messages.namePurchase);
@@ -86384,7 +86391,8 @@ class PlayModel {
     }
 
     async buyName() {
-        if (!await that.checkNetwork()) return;
+        let result = await that.checkNetwork();
+        if (!result) return;
         if (!JUST.Bridges.Metamask && !that.getAddress()) {
             jQuery('#addressPopup').modal()
         } else {
