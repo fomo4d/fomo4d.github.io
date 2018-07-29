@@ -43,7 +43,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item dropdown-item bindAddress" target="_new" href="javascript:void(0)">{messages.bindAddress}</a>
                             <a class="dropdown-item dropdown-item" target="_new" href="https://fomo3d.hostedwiki.co/">{messages.quickStart}</a>
-                            <a class="dropdown-item dropdown-item" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">{messages.contract}<br></a>
+                            <a class="dropdown-item dropdown-item" target="_new" href="https://etherscan.io/address/0x9872ffc47ff6ae0cbdec2f68bb88ad3169d69afc#code">{messages.contract}<br></a>
                         </div>
                     </div>
                     <div class="col-auto">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="d-flex only-mobile">
                     <div class="p-2">
-                        <a class="small" target="_new" href="https://rinkeby.etherscan.io/address/0x8295D700e6824Dcb601B9d5B31a0A1C13D5B9a57#code">{messages.contract}<br></a>
+                        <a class="small" target="_new" href="https://etherscan.io/address/0x9872ffc47ff6ae0cbdec2f68bb88ad3169d69afc#code">{messages.contract}<br></a>
                     </div>
                 </div>
                 <div class="d-flex only-mobile">
@@ -283,11 +283,6 @@
 
                     <div class="text-center">
                         <span>{messages.transactionReceiverAddress}</span><br>
-                        <div class="qr-container">
-                            <img src="./img/qrcode.png" alt="">
-                        </div>
-
-
                         <span class="small" id="contractAddress"></span><br>
                         <button class="btn btn-outline-purp" id="copyContractAddress" data-clipboard-target="#contractAddress">
                             <i class="fas fa-paste"></i> {messages.copy}</button>
@@ -319,6 +314,12 @@
                         <br>
                         <button class="btn btn-outline-purp" id="copyTransactionData" data-clipboard-target="#transactionData">
                             <i class="fas fa-paste"></i> {messages.copy}</button>
+                    </div>
+                    <br>
+                    <div class="text-center">
+                        <div class="qr-container">
+                            <img src="./img/qrcode.png" alt="">
+                        </div>
                     </div>
                 </div>
 
